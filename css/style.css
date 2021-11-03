@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 15px;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+:root {
+  --prim-red: hsl(0, 78%, 62%);
+  --prim-Cyan: hsl(180, 62%, 55%);
+  --prim-Orange: hsl(34, 97%, 64%);
+  --prim-Blue: hsl(212, 86%, 64%);
+  --neut-Very-Dark-Blue: hsl(234, 12%, 34%);
+  --neut-Grayish-Blue: hsl(229, 6%, 66%);
+  --neut-Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+.container {
+  background-color: var(--neut-Very-Light-Gray);
+  width: 1440px;
+  margin: 100px auto;
+  padding: 100px;
+}
+
+.head {
+  text-align: center;
+  color: var(--neut-Very-Dark-Blue);
+}
+
+.head .headh {
+  font-weight: 200;
+}
+
+.head p {
+  font-weight: 400;
+  color: var(--neut-Grayish-Blue);
+  padding-top: 10px;
+}
+
+.content1::after {
+  content: "\a";
+  white-space: pre;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 20px 20px;
+  grid-template-areas:
+    ". . . card2 card2 card2 . . ."
+    "card1 card1 card1 card2 card2 card2 card4 card4 card4"
+    "card1 card1 card1 card3 card3 card3 card4 card4 card4"
+    ". . . card3 card3 card3 . . .";
+  padding-top: 50px;
+}
+
+.card1,
+.card2,
+.card3,
+.card4 {
+  background-color: white;
+  padding: 40px;
+  border-radius: 7px;
+  box-shadow: 6px 6px 44px #c7c7c7, -6px -6px 44px #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+.card1 {
+  grid-area: card1;
+  border-top: 5px solid var(--prim-Cyan);
+}
+.card2 {
+  grid-area: card2;
+  border-top: 5px solid var(--prim-red);
+}
+.card3 {
+  grid-area: card3;
+  border-top: 5px solid var(--prim-Orange);
+}
+.card4 {
+  grid-area: card4;
+  border-top: 5px solid var(--prim-Blue);
+}
+
+.cardh3 {
+  padding-bottom: 20px;
+}
+
+.cardp {
+    padding-bottom: 30px;
+}
+
+img {
+    align-self: flex-end;
+}
+
+@media (max-width: 376px) {
+  .container {
+    width: 375px;
+    margin: 0;
+    padding: 70px 30px;
+  }
+  .head h1 {
+    font-size: 25px;
+  }
+  .head p {
+    padding-bottom: 50px;
+  }
+  .content1::after {
+    content: "";
+    white-space: normal;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+  }
+}
