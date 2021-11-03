@@ -29,7 +29,7 @@ body {
 .container {
   background-color: var(--neut-Very-Light-Gray);
   width: 1440px;
-  margin: 100px auto;
+  margin: 0 auto;
   padding: 100px;
 }
 
